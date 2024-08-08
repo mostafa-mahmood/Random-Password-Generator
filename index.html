@@ -5,34 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password generator</title>
     <link rel="stylesheet" href="Password.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=Quicksand:wght@300..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Random Password</h1>
-    <div id="password_container"></div>
-    <button onclick="Generate_Password()">Generate</button>
-    <div class="choices">
-        <div class="a">
-            <input type="checkbox" id="upper">
-            <label>Include uppercase</label>
+        <div class="title">
+            <h1 id="f">Generate a</h1>
+            <h1 id="s">random password</h1>
         </div>
-        <div class="b">
-            <input type="checkbox" id="lower">
-            <label>Include lowercase</label>
+        <div id="password_container"></div>
+        <button onclick="Generate_Password()">Generate Password</button>
+        <div class="choices">
+            <div class="a">
+                <input type="checkbox" id="upper">
+                <label>Include uppercase</label>
+            </div>
+            <div class="b">
+                <input type="checkbox" id="lower">
+                <label>Include lowercase</label>
+            </div>
+            <div class="c">
+                <input type="checkbox" id="number">
+                <label>Include numbers</label>
+            </div>
+            <div class="d">
+                <input type="checkbox" id="symbol">
+                <label>Include symbols</label>
+            </div>
         </div>
-        <div class="c">
-            <input type="checkbox" id="number">
-            <label>Include numbers</label>
+        <div class="range">
+            <label id="Num_of_char" for="character_range" style="color: #e4ebfa;">Number Of Characters</label>
+            <input type="range" id="character_range" min="0" max="20" value="10" oninput="update_value()">
+            <span id="Displayvalue" style="padding-top: 20px; color: #4ade83;">10</span>
         </div>
-        <div class="d">
-            <input type="checkbox" id="symbol">
-            <label>Include symbols</label>
-        </div>
-    </div>
-    <div class="range">
-        <label id="Num_of_char" for="character_range" style="color: #ffc300;">Number Of Characters</label>
-        <input type="range" id="character_range" min="0" max="20" value="10" oninput="update_value()">
-        <span id="Displayvalue" style="padding-top: 20px; color: #ffc300;">10</span>
-    </div>
+
     <script src="Password.js"></script>
 </body>
 </html>
